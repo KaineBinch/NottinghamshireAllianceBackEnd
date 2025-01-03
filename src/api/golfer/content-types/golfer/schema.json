@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "golfers",
+  "info": {
+    "singularName": "golfer",
+    "pluralName": "golfers",
+    "displayName": "Golfer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "golferName": {
+      "type": "string"
+    },
+    "isPro": {
+      "type": "boolean"
+    },
+    "isSenior": {
+      "type": "boolean"
+    },
+    "events": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::event.event",
+      "inversedBy": "golfers"
+    },
+    "tee_times": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tee-time.tee-time",
+      "inversedBy": "golfers"
+    },
+    "golf_club": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::golf-club.golf-club",
+      "inversedBy": "golfers"
+    },
+    "scores": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::score.score",
+      "mappedBy": "golfer"
+    }
+  }
+}

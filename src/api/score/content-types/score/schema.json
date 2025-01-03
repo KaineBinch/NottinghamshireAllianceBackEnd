@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "scores",
+  "info": {
+    "singularName": "score",
+    "pluralName": "scores",
+    "displayName": "Score",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "golferEventScore": {
+      "type": "integer"
+    },
+    "golfer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::golfer.golfer",
+      "inversedBy": "scores"
+    },
+    "event": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::event.event",
+      "inversedBy": "scores"
+    }
+  }
+}

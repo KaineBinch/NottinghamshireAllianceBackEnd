@@ -1,0 +1,91 @@
+{
+  "kind": "collectionType",
+  "collectionName": "golf_clubs",
+  "info": {
+    "singularName": "golf-club",
+    "pluralName": "golf-clubs",
+    "displayName": "Golf Club",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "clubName": {
+      "type": "string"
+    },
+    "clubAddress": {
+      "type": "string"
+    },
+    "clubURL": {
+      "type": "string"
+    },
+    "clubImage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "clubLogo": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "clubContactNumber": {
+      "type": "string"
+    },
+    "proName": {
+      "type": "string"
+    },
+    "clubID": {
+      "type": "enumeration",
+      "enum": [
+        "BF",
+        "BON",
+        "BRI",
+        "BUL",
+        "CM",
+        "CC",
+        "CX",
+        "EDW",
+        "MAP",
+        "NK",
+        "NP",
+        "OP",
+        "ROT",
+        "RAM",
+        "RP",
+        "RS",
+        "RUD",
+        "SW",
+        "TL",
+        "WP",
+        "WSP"
+      ]
+    },
+    "events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::event.event",
+      "mappedBy": "golf_club"
+    },
+    "golfers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::golfer.golfer",
+      "mappedBy": "golf_club"
+    }
+  }
+}

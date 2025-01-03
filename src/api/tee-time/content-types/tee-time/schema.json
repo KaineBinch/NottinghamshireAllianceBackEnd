@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tee_times",
+  "info": {
+    "singularName": "tee-time",
+    "pluralName": "tee-times",
+    "displayName": "Tee Time",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "golferTeeTime": {
+      "type": "time"
+    },
+    "golfers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::golfer.golfer",
+      "mappedBy": "tee_times"
+    },
+    "event": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::event.event",
+      "inversedBy": "tee_times"
+    }
+  }
+}

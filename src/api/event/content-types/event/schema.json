@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "eventDate": {
+      "type": "date",
+      "required": false
+    },
+    "eventType": {
+      "type": "enumeration",
+      "enum": [
+        "Order of Merit",
+        "Team Event",
+        "Roy Fletcher Memorial",
+        "Presidents Day",
+        "Away Trip",
+        "Harry Brown"
+      ]
+    },
+    "golfers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::golfer.golfer",
+      "mappedBy": "events"
+    },
+    "golf_club": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::golf-club.golf-club",
+      "inversedBy": "events"
+    },
+    "scores": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::score.score",
+      "mappedBy": "event"
+    },
+    "tee_times": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tee-time.tee-time",
+      "mappedBy": "event"
+    },
+    "eventReview": {
+      "type": "text"
+    }
+  }
+}

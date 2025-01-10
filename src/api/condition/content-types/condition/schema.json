@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "conditions",
+  "info": {
+    "singularName": "condition",
+    "pluralName": "conditions",
+    "displayName": "Competition Conditions",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "conditionTitle": {
+      "type": "string"
+    },
+    "conditionContent": {
+      "type": "json"
+    }
+  }
+}
